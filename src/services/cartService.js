@@ -1,4 +1,5 @@
 import Cart from "../models/cart";
+const mongoose = require('mongoose');  
 
 let createNewCartService = (data) => {
       return new Promise(async (resolve, reject) => {

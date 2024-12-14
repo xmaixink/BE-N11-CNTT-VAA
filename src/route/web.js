@@ -3,8 +3,6 @@ import cartController from "../controllers/cartController";
 import orderController from "../controllers/OrderController.js";
 import productController from "../controllers/productController.js";
 import sideDishController from "../controllers/sideDishController.js";
-
-
 import userController from "../controllers/userController.js";
 import vendorController from "../controllers/vendorController.js";
 
@@ -49,11 +47,15 @@ let initWebRoutes = (app) => {
 	router.post("/api/update-status-order/:orderId", orderController.updateStatusOrder);
 	router.get("/api/get-all-order", orderController.getAllOrder);
 	router.get("/api/get-order-user/:userId", orderController.getAllOrderByUser);
+	router.get("/api/total-revenue", orderController.getTotalRevenueByVendor);
+
 
 	//dishes
 	router.post("/api/create-side-dish", sideDishController.createNewSideDish);
 	router.get("/api/get-all-side-dishes", sideDishController.getAllSideDish);
 	router.delete("/api/delete-side-dish", sideDishController.deleteSideDish);
+
+
 
 	app.use("/api/v1/vnpay", vnpay);
 
